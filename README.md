@@ -1,9 +1,11 @@
-TEXTMINING PRAKTIKA
-===================
+# Textmining Praktikum
 
-informationen
--------------
-lates dump auf https://dumps.wikimedia.org/enwiki/latest/
-alle orte mit eintrag (geografikum) in normdaten (deutsche national bibliothek)
-https://portal.dnb.de/
-sourceforge: simmetrics sourceforge.net/projects/simmetrics/
+## Allgemeines
+
+Im Rahmen des Text Mining Praktikums wird dieses Repository von der Gruppe "Named Entity Recognition mit Wikipedia (Orte)" genutzt.
+
+## Links & Infos
+
+Neueste [Wikipedia Dumps](https://dumps.wikimedia.org/enwiki/latest/)  
+Alle Orte mit Eintrag (Geografikum) in Normdaten: [Deutsche National Bibliothek](https://portal.dnb.de/)  
+Nützliche Bibliothek: [simmetrics](sourceforge.net/projects/simmetrics/)
