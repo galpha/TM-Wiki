@@ -12,6 +12,8 @@ Nützliche Bibliothek: [simmetrics](https://sourceforge.net/projects/simmetrics/
 
 # Compile & Run
 
+install maven 3.0.5
+
 ## Title Parser
 
 cd ../TM-Wiki/
