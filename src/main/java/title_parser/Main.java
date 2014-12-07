@@ -1,14 +1,32 @@
 package title_parser;
-
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 
-/**
- * Created by me on 01.12.14.
- */
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import org.xml.sax.XMLReader;
+import org.xml.sax.helpers.XMLReaderFactory;
+
 public class Main {
-    public static void main(String[] args) throws IOException {
-        DataHandler dataHandler = new DataHandler();
-        Parser parser = new Parser("data/all_title");
-        dataHandler.writeFile(parser.getPlaces(), "data/all_places.txt");
+    public static void main(String[] args) {
+        try {
+            XMLReader xmlReader = XMLReaderFactory.createXMLReader();
+
+            FileReader reader = new FileReader("/home/galpha/Desktop/Textmining/all_pages_dewiki.xml");
+            InputSource inputSource = new InputSource(reader);
+
+            xmlReader.setContentHandler(new PageContentHandler());
+
+            xmlReader.parse(inputSource);
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        }
     }
 }
