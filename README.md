@@ -6,7 +6,7 @@ Im Rahmen des Text Mining Praktikums wird dieses Repository von der Gruppe "Name
 
 ## Links & Infos
 
-Neueste [Wikipedia Dumps](https://dumps.wikimedia.org/dewiki/latest/)
+Neueste [Wikipedia Dumps](https://dumps.wikimedia.org/dewiki/latest/)  
 Alle Orte mit Eintrag (Geografikum) in Normdaten: [Deutsche National Bibliothek](https://portal.dnb.de/)  
 Nützliche Bibliothek: [simmetrics](https://sourceforge.net/projects/simmetrics/)
 
