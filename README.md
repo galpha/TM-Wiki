@@ -12,8 +12,6 @@ Nützliche Bibliothek: [simmetrics](https://sourceforge.net/projects/simmetrics/
 
 # Compile & Run
 
-install maven 3.0.5
-
 ## Title Parser
 
 cd ../TM-Wiki/
@@ -21,3 +19,12 @@ cd ../TM-Wiki/
 javac *.java
 
 java Main
+
+## Highlighter
+
+cd TM-Wiki/src/main/java/text_highlighter/  
+
+javac -cp '.:simmetrics.jar' ./text_highlighter.java 
+
+java -cp '.:simmetrics.jar' text_highlighter
+
