@@ -1,7 +1,7 @@
 import uk.ac.shef.wit.simmetrics.*;
 import uk.ac.shef.wit.simmetrics.similaritymetrics.*;
 
-public class text_highlighter {
+public class metric_Test {
 
     public static void main(final String[] args) {
 
