@@ -8,7 +8,7 @@ import java.io.IOException;
 import uk.ac.shef.wit.simmetrics.similaritymetrics.AbstractStringMetric;
 import uk.ac.shef.wit.simmetrics.similaritymetrics.Levenshtein;
 
-public class levenshtein {
+public class distance_calculate {
 
     public static void main(final String[] args) {
         String places = null, matches = null;
