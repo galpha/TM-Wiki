@@ -12,7 +12,8 @@ public class filter {
 
     public static void main(final String[] args) {
         try {
-            xmlTitles = readFile("./data/all_title.xml");
+            //xmlTitles = readFile("./data/all_title.xml");
+            xmlTitles = readFile("./data/multi_word_titles.xml");
         }
         catch (IOException e) {
             System.out.println("readFile() failed.\n");
@@ -34,7 +35,9 @@ public class filter {
             //if (titles[h].contains(" ") || titles[h].contains("(") || titles[h].contains(")") || titles[h].contains("-") || titles[h].contains(".")) {
             //if (titles[h].contains("(") || titles[h].contains(")") || titles[h].contains("[") || titles[h].contains("]")) {
             //if (titles[h].contains("-")) {
-            if (titles[h].contains(".")) {
+            //if (titles[h].contains(".")) {
+            //if ( titles[h].contains("(") || titles[h].contains(")") || titles[h].contains("[") || titles[h].contains("]") ) {
+            if ( titles[h].contains("-") ) {
                 result2 += titles[h] + "\n";
             }
             //else {
@@ -47,7 +50,7 @@ public class filter {
         //writeFile(result2, "./data/multi_word_titles.xml");
         //writeFile(result2, "./data/braces.xml");
         //writeFile(result2, "./data/dashes.xml");
-        writeFile(result2, "./data/dots.xml");
+        writeFile(result2, "./data/dashes_and_multi_words.xml");
     }
 
     private static String readFile(String file) throws IOException {

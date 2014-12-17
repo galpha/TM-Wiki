@@ -1,11 +1,10 @@
 # Statistiken
 
-## alle Titel
+Kategorie   | ja (%) | nein (%)
+:-----------|:------:| :-----:
+Einzelwörter|   57   |   43
+Klammern    |   18   |   82
+Bindestrich |    8   |   92
+Punkte      |    1   |   99
 
-<table>
-<tr><th>Kategorie</th><th>ja (%)</th><th>nein (%)</th></tr>
-<tr><td>Einzelwörter</td><td><center>57</center></td><td><center>43</center></td></tr>
-<tr><td>Klammern</td><td><center>18</center></td><td><center>82</center></td></tr>
-<tr><td>Bindestrich</td><td><center>8</center></td><td><center>92</center></td></tr>
-<tr><td>Punkt</td><td><center>1</center></td><td><center>99</center></td></tr>
-</table>
+Mit sauberer Implementierung von Markierungen für Titel, die *Einzelwörter* sind oder aus *mehreren* Wörtern bestehen und *Klammern* oder *Bindestriche* enthalten, können also **83%** der in den Texten vorkommenden Geografiken abgedeckt werden.
