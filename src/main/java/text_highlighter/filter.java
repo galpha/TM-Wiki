@@ -31,17 +31,23 @@ public class filter {
             titles[h] = titles[h].replace("\t<title>","");
             titles[h] = titles[h].replace("</title>","");
 
-            if (titles[h].contains(" ") || titles[h].contains("(") || titles[h].contains(")") || titles[h].contains("-") || titles[h].contains(".")) {
+            //if (titles[h].contains(" ") || titles[h].contains("(") || titles[h].contains(")") || titles[h].contains("-") || titles[h].contains(".")) {
+            //if (titles[h].contains("(") || titles[h].contains(")") || titles[h].contains("[") || titles[h].contains("]")) {
+            //if (titles[h].contains("-")) {
+            if (titles[h].contains(".")) {
                 result2 += titles[h] + "\n";
             }
-            else {
-                result1 += titles[h] + "\n";
-            }
+            //else {
+            //    result1 += titles[h] + "\n";
+            //}
         }
 
         // save lists
-        writeFile(result1, "./data/one_word_titles.xml");
-        writeFile(result2, "./data/multi_word_titles.xml");
+        //writeFile(result1, "./data/one_word_titles.xml");
+        //writeFile(result2, "./data/multi_word_titles.xml");
+        //writeFile(result2, "./data/braces.xml");
+        //writeFile(result2, "./data/dashes.xml");
+        writeFile(result2, "./data/dots.xml");
     }
 
     private static String readFile(String file) throws IOException {

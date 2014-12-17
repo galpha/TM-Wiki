@@ -37,6 +37,9 @@ public class ReadTitles {
 		try {
 			BufferedReader reader = new BufferedReader( new FileReader (file));
 			String line, clearLine;
+
+			// stop-Wort Liste: immer führendes Leerzeichen mit angeben um Formatierung zu bewahren
+			// TODO: Liste erweitern
 			String[] stopWordList = {" an", " am", " ob", " der", " und", " im", " bei", " vor", " dem"};
 
 			while( ( line = reader.readLine() ) != null ) {
@@ -51,7 +54,7 @@ public class ReadTitles {
 					clearLine = clearLine.replace(stopWord, "");
 				}
 
-				// füge originale Zeile und eventuell bereinigte Zeile hinzu
+				// füge originale Zeile und eventuell bereinigte Kopie hinzu
 				titles.add(line);
 				if (!clearLine.equals(line)) {
 					titles.add(clearLine);
