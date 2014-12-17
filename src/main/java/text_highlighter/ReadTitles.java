@@ -1,4 +1,4 @@
-package text_highlighter;
+//package text_highlighter;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -8,24 +8,24 @@ import java.util.ArrayList;
 
 /**
  * Liefert alle Titel als Array zurueck
- * @author Yves
+ * @author Yves, Stefan
  *
  */
 public class ReadTitles {
-	
+
 	/**
 	 * Zum Testen der Funktion readTitles.
 	 * Liest alle Titel ein und gibt sie auf der Konsole aus.
 	 * @param args
 	 */
-	public static void main(String[] args){			
-		String[] titles = null;		
-		titles = readTitles("./data/all_title.xml");		
+	public static void main(String[] args){
+		String[] titles = null;
+		titles = readTitles("./data/multi_word_titles.xml");
 		for(String title : titles){
-			System.out.println(title);			
+			System.out.println(title);
 		}
 	}
-	
+
 	/**
 	 * Liest xml mit allen Titeln ein.
 	 * Entfernt dabei die Tags.
@@ -36,26 +36,33 @@ public class ReadTitles {
 		ArrayList<String> titles = new ArrayList<String>();
 		try {
 			BufferedReader reader = new BufferedReader( new FileReader (file));
-			String line;
+			String line, clearLine;
+			String[] stopWordList = {" an", " am", " ob", " der", " und", " im", " bei", " vor", " dem"};
+
 			while( ( line = reader.readLine() ) != null ) {
 				if (line.equals("<all_title>") || line.equals("</all_title>"))
 					continue;
 				// entfernt title-Tags und entfernt alle Leerzeichen am Anfang und am Ende
 				line = line.replace("<title>", "").replace("</title>", "").trim();
-				/*
-				 * Hier wird die ganze Zeile gespeichert, weil z.B. New York nicht
-				 * in zwei Eintraege getrennt werden sollte,
-				 * da sonst ueberall New markiert werden wuerde.
-				 */
+				clearLine = line;
+
+				// sucht nach stop-Wort und löscht es in Kopie
+				for (String stopWord : stopWordList) {
+					clearLine = clearLine.replace(stopWord, "");
+				}
+
+				// füge originale Zeile und eventuell bereinigte Zeile hinzu
 				titles.add(line);
-				//System.out.println(line);				
-			}						
+				if (!clearLine.equals(line)) {
+					titles.add(clearLine);
+				}
+			}
 			reader.close();
-		} catch (FileNotFoundException e) {			
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-		} catch (IOException e) {			
+		} catch (IOException e) {
 			e.printStackTrace();
-		}			
+		}
 		return titles.toArray(new String[titles.size()]);
 	}
 }

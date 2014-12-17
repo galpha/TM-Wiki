@@ -28,3 +28,8 @@ javac -cp '.:simmetrics.jar' ./text_highlighter.java
 
 java -cp '.:simmetrics.jar' text_highlighter
 
+### Klassen im Package
+
+javac -d . ReadTitles.java
+
+java text_highlighter.ReadTitles
