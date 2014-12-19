@@ -1,3 +1,5 @@
+package text_highlighter;
+
 import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

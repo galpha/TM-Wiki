@@ -1,4 +1,4 @@
-//package text_highlighter;
+package text_highlighter;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

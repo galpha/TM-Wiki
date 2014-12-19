@@ -1,3 +1,5 @@
+package text_highlighter;
+
 import uk.ac.shef.wit.simmetrics.*;
 import uk.ac.shef.wit.simmetrics.similaritymetrics.*;
 
