@@ -4,6 +4,7 @@
 .idea/
 *.iml
 target/
+out/
 
 # data files
 data/
