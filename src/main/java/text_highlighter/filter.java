@@ -14,7 +14,7 @@ public class filter {
 
     public static void main(final String[] args) {
         try {
-            //xmlTitles = readFile("./data/all_title.xml");k.jbkfv
+            //xmlTitles = readFile("./data/all_title.xml");
             xmlTitles = readFile("./data/multi_word_titles.xml");
         }
         catch (IOException e) {
