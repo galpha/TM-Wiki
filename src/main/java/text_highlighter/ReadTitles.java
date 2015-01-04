@@ -35,7 +35,8 @@ public class ReadTitles {
 	public static String[] readTitles(String file){
 		ArrayList<String> titles = new ArrayList<String>();
 		try {
-			BufferedReader reader = new BufferedReader( new FileReader (file));
+			//BufferedReader reader = new BufferedReader( new FileReader (file));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8")); // UTF-8 ist wichtig!
 			String line, clearLine;
 
 			// stop-Wort Liste: immer führendes Leerzeichen mit angeben um Formatierung zu bewahren
