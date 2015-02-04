@@ -8,4 +8,8 @@ out/
 
 # data files
 data/
+doc/
 *.xml
+*.tsv
+*.data
+

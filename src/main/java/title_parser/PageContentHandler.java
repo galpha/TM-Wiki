@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 public class PageContentHandler implements ContentHandler {
 
-    private ArrayList<Page> allPages = new ArrayList<Page>();
     private String currentValue;
     private Page page;
     private StringBuilder buf;

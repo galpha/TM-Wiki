@@ -1,4 +1,4 @@
-package text_highlighter;
+//package text_highlighter;
 
 import java.util.ArrayList;
 import java.io.BufferedReader;
@@ -14,8 +14,8 @@ public class filter {
 
     public static void main(final String[] args) {
         try {
-            //xmlTitles = readFile("./data/all_title.xml");
-            xmlTitles = readFile("./data/multi_word_titles.xml");
+            //xmlTitles = readFile("./data/test_roh.txt");
+            xmlTitles = readFile("./data/trainingsdaten_roh.txt");
         }
         catch (IOException e) {
             System.out.println("readFile() failed.\n");
@@ -24,35 +24,32 @@ public class filter {
 
         // seperate into lines
         String[] titles = xmlTitles.split("\\n");
-
-        // titles1 - only one-word-titles; titles2 - the rest
-        String result1 = "";
-        String result2 = "";
+        String result = "";
+        System.out.println("split successful.\n");
 
         // delete title tags and skip first and last line
-        for (int h = 1; h < (titles.length-1); h++) {
-            titles[h] = titles[h].replace("\t<title>","");
-            titles[h] = titles[h].replace("</title>","");
-
-            //if (titles[h].contains(" ") || titles[h].contains("(") || titles[h].contains(")") || titles[h].contains("-") || titles[h].contains(".")) {
-            //if (titles[h].contains("(") || titles[h].contains(")") || titles[h].contains("[") || titles[h].contains("]")) {
-            //if (titles[h].contains("-")) {
-            //if (titles[h].contains(".")) {
-            //if ( titles[h].contains("(") || titles[h].contains(")") || titles[h].contains("[") || titles[h].contains("]") ) {
-            if ( titles[h].contains("-") ) {
-                result2 += titles[h] + "\n";
+        for (int h = 0; h < titles.length; h++) {
+            if ( titles[h].length() > 2 && !titles[h].substring(0,1).equals("\t") ) {
+                if ( !titles[h].contains("|") && !titles[h].contains("=") && !titles[h].contains("“") && !titles[h].contains("_")) {
+                    result += titles[h] + "\n";
+                }
+                else {
+                    if (titles[h].contains("LOCATION")) {
+                        titles[h] = titles[h].replace("“", "");
+                        titles[h] = titles[h].replace("|", "");
+                        titles[h] = titles[h].replace("=", "");
+                        titles[h] = titles[h].replace("»", "");
+                        result += titles[h] + "\n";
+                    }
+                }
             }
-            //else {
-            //    result1 += titles[h] + "\n";
-            //}
+
         }
 
-        // save lists
-        //writeFile(result1, "./data/one_word_titles.xml");
-        //writeFile(result2, "./data/multi_word_titles.xml");
-        //writeFile(result2, "./data/braces.xml");
-        //writeFile(result2, "./data/dashes.xml");
-        writeFile(result2, "./data/dashes_and_multi_words.xml");
+        System.out.println("iteration successful.\n");
+
+        //writeFile(result, "./data/test_bereinigt.txt");
+        writeFile(result, "./data/trainingsdaten_bereinigt.txt");
     }
 
     private static String readFile(String file) throws IOException {

@@ -1,0 +1,33 @@
+# java -Xmx6g -cp stanford-ner.jar edu.stanford.nlp.ie.crf.CRFClassifier -prop test.prop
+
+trainFile = trainingsdaten.tsv
+serializeTo = klassifizierer.ser.gz
+
+map = word=0,answer=1
+maxLeft=1
+maxRight=1
+
+useClassFeature=false
+useWord=true
+mergeTags=true
+
+useNGrams=false
+# noMidNGrams=true
+# maxNGramLeng=6
+# usePrev=true
+# useNext=true
+
+useDisjunctive=true
+useSequences=false
+usePrevSequences=false
+
+# the last 4 properties deal with word shape features
+# useTypeSeqs=true
+# useTypeSeqs2=true
+# useTypeySequences=true
+# wordShape=chris2useLC
+
+QNsize = 10
+saveFeatureIndexToDisk = true
+useObservedSequencesOnly=true
+featureDiffThresh=0.05

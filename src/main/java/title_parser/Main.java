@@ -8,6 +8,11 @@ import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
+/**
+ * Parst alle Wikipediaartikel und schreibt alle als Ort gekennzeichten
+ * artikel raus. Wir haben den Text Korpus verkleinert da berechnung sehr
+ * lange dauert.
+ */
 public class Main {
     public static void main(String[] args) {
         try {
