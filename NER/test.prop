@@ -1,7 +1,7 @@
 # java -Xmx6g -cp stanford-ner.jar edu.stanford.nlp.ie.crf.CRFClassifier -prop test.prop
 
-trainFile = trainingsdaten.tsv
-serializeTo = klassifizierer.ser.gz
+trainFile = final_trainingsdaten.tsv
+serializeTo = final_klassifizierer.ser.gz
 
 map = word=0,answer=1
 maxLeft=1
